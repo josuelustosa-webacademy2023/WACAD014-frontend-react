@@ -7,7 +7,7 @@ import {
   faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
-import logoNav from "../assets/logo-manto-raiz.png";
+import logoNav from "../../assets/images/logo-manto-raiz.png";
 
 class NavBar extends Component {
   render() {

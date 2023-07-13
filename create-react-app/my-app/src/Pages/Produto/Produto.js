@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CardGrid from "../../CardGrid/CardGrid";
+import CardGrid from "../../components/CardGrid/CardGrid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
@@ -28,7 +28,7 @@ class Produto extends Component {
             </button>
           </form>
         </div>
-        
+
         <CardGrid />
 
         <div class="container mt-4">
@@ -62,7 +62,6 @@ class Produto extends Component {
             </ul>
           </nav>
         </div>
-        <div></div>
       </div>
     );
   }

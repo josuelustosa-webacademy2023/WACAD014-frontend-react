@@ -6,7 +6,7 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { DADOS_PRODUTOS } from "../utils/dados-produto.mock";
+import { DADOS_PRODUTOS } from "../../utils/dados-produto.mock";
 
 class CardGrid extends Component {
   render() {
