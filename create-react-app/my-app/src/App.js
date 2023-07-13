@@ -9,7 +9,7 @@ class App extends Component {
       <div className="container-fluid">
         <NavBar />
         <h1>Olá, React!</h1>
-        <Table />
+        {/* <Table /> */}
       </div>
     );
   }
