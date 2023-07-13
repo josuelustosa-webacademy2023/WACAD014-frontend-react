@@ -38,13 +38,13 @@ class NavBar extends Component {
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item pe-5">
-                <a class="nav-link active" aria-current="page" href="#">
+                <a class="nav-link" href="#">
                   <FontAwesomeIcon icon={faHouse} style={{ marginRight: 8 }} />{" "}
                   Início
                 </a>
               </li>
               <li class="nav-item pe-5">
-                <a class="nav-link" href="#">
+                <a class="nav-link active" href="#" aria-current="page">
                   <FontAwesomeIcon
                     icon={faBoxesStacked}
                     style={{ marginRight: 8 }}
