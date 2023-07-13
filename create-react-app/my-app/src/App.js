@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 
-import Table from "./Table/Table";
 import NavBar from "./NavBar/NavBar";
+import Produto from "./Pages/Produto/Produto";
 
 class App extends Component {
   render() {
     return (
-      <div className="container-fluid">
+      <div>
         <NavBar />
-        <h1>Olá, React!</h1>
-        {/* <Table /> */}
+        <Produto />
       </div>
     );
   }
