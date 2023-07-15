@@ -1,4 +1,4 @@
-export const CHARACTERS = [
+export const characters = [
   {
     name: "Nat",
     email: "nat@mail.com",
