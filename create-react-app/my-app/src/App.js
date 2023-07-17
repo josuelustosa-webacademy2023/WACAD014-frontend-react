@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 
 import NavBar from "./components/NavBar/NavBar";
-//import Produto from "./Pages/Produto/Produto";
-import Table from "./components/Table/Table";
+import Produto from "./Pages/Produto/Produto";
+//import Table from "./components/Table/Table";
 
 import { characters } from "./utils/dados-table.mock";
+import { DADOS_PRODUTOS } from "./utils/dados-produto.mock";
 
 class App extends Component {
   state = {
@@ -24,11 +25,11 @@ class App extends Component {
     return (
       <div>
         <NavBar />
-        {/* <Produto /> */}
-        <Table
+        {/* <Table
           characterData={this.state.characters}
           removeCharacter={this.removeCharacter}
-        />
+        /> */}
+        <Produto dadosProduto={DADOS_PRODUTOS}/>
       </div>
     );
   }
