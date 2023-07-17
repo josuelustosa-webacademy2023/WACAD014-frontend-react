@@ -5,6 +5,7 @@ import {
   faBoxesStacked,
   faRightToBracket,
   faUserPlus,
+  faCartPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
 import logoNav from "../../assets/images/logo-manto-raiz.png";
@@ -61,7 +62,7 @@ class NavBar extends Component {
                   Login
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item pe-5">
                 <a class="nav-link" href="#">
                   <FontAwesomeIcon
                     icon={faUserPlus}
@@ -69,6 +70,14 @@ class NavBar extends Component {
                   />
                   Signup
                 </a>
+              </li>
+              <li class="nav-item">
+                <button
+                  type="button"
+                  class="nav-link btn btn-success text-white border-3"
+                >
+                  <FontAwesomeIcon icon={faCartPlus} /> Carrinho
+                </button>
               </li>
             </ul>
           </div>
