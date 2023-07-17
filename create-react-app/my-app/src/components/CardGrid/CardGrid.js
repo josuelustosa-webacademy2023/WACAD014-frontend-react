@@ -6,13 +6,13 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { DADOS_PRODUTOS } from "../../utils/dados-produto.mock";
-
 class CardGrid extends Component {
   render() {
+    const { dadosCard } = this.props;
+
     return (
       <div class="row row-cols-1 row-cols-md-3 g-4 py-4">
-        {DADOS_PRODUTOS.map((item, index) => (
+        {dadosCard.map((item, index) => (
           <div class="col" key={index}>
             <div class="card h-100 border-3 p-3">
               <img
