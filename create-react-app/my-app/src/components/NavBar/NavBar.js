@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
   faBoxesStacked,
+  faUserGear,
   faRightToBracket,
   faUserPlus,
   faCartPlus,
@@ -53,31 +54,46 @@ class NavBar extends Component {
                   Produtos
                 </a>
               </li>
-              <li class="nav-item pe-5">
-                <a class="nav-link" href="#">
-                  <FontAwesomeIcon
-                    icon={faRightToBracket}
-                    style={{ marginRight: 8 }}
-                  />
-                  Login
+              <li class="nav-item dropdown mb-3 pe-lg-5">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <FontAwesomeIcon icon={faUserGear} /> Usuário
                 </a>
-              </li>
-              <li class="nav-item pe-5">
-                <a class="nav-link" href="#">
-                  <FontAwesomeIcon
-                    icon={faUserPlus}
-                    style={{ marginRight: 8 }}
-                  />
-                  Signup
-                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <FontAwesomeIcon
+                        icon={faRightToBracket}
+                        style={{ marginRight: 8 }}
+                      />
+                      Login
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <FontAwesomeIcon
+                        icon={faUserPlus}
+                        style={{ marginRight: 8 }}
+                      />
+                      Signup
+                    </a>
+                  </li>
+                </ul>
               </li>
               <li class="nav-item">
-                <button
-                  type="button"
-                  class="nav-link btn btn-success text-white border-3"
-                >
-                  <FontAwesomeIcon icon={faCartPlus} /> Carrinho
-                </button>
+                <div class="d-grid w-100">
+                  <button
+                    type="button"
+                    class="nav-link btn btn-success text-white border-3"
+                  >
+                    <FontAwesomeIcon icon={faCartPlus} /> Carrinho
+                  </button>
+                </div>
               </li>
             </ul>
           </div>
