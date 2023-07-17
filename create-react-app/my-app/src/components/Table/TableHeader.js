@@ -7,6 +7,7 @@ class TableHeader extends Component {
         <tr>
           <th>Nome</th>
           <th>e-mail</th>
+          <th>Ação</th>
         </tr>
       </thead>
     );
