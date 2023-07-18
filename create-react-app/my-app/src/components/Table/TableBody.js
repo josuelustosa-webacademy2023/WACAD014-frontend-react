@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 class TableBody extends Component {
   render() {
@@ -18,17 +20,16 @@ class TableBody extends Component {
             />
             {row.nome}
           </td>
-          <td>
-            <input
-              type="number"
-              class="form-control border-3"
-              id="numberItens"
-              defaultValue={0}
-              min={0}
-              max={row.quant_estoque}
-            />
-          </td>
           <td>R$ {row.preco}</td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-danger text-white border-3"
+              onClick={() => removeLinha(index)}
+            >
+              <FontAwesomeIcon icon={faTrash} /> Remover
+            </button>
+          </td>
         </tr>
       );
     });

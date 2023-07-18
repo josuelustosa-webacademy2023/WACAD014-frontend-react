@@ -6,8 +6,8 @@ class TableHeader extends Component {
       <thead>
         <tr>
           <th>Manto</th>
-          <th>Quant.</th>
           <th>Subtotal</th>
+          <th>Ação</th>
         </tr>
       </thead>
     );

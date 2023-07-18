@@ -12,9 +12,9 @@ class Modal extends Component {
   };
 
   removeLinha = (index) => {
-    const { DADOS_PRODUTOS } = this.state;
+    const { characters } = this.state;
     this.setState({
-      characters: DADOS_PRODUTOS.filter((character, i) => {
+      characters: characters.filter((character, i) => {
         return i !== index;
       }),
     });
@@ -49,7 +49,9 @@ class Modal extends Component {
               </h1>
 
               <div className="d-flex align-items-center">
-                <span class="badge fs-5 text-bg-info">Total: R$ {valorTotal}</span>
+                <span class="badge fs-5 text-bg-info">
+                  Total: R$ {valorTotal}
+                </span>
                 <button
                   type="button"
                   className="btn-close"
