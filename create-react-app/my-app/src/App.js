@@ -29,7 +29,7 @@ class App extends Component {
           characterData={this.state.characters}
           removeCharacter={this.removeCharacter}
         /> */}
-        <Produto dadosProduto={DADOS_PRODUTOS}/>
+        <Produto dadosProduto={DADOS_PRODUTOS} />
       </div>
     );
   }

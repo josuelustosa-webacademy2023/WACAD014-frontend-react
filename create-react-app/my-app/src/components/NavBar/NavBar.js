@@ -9,6 +9,8 @@ import {
   faCartPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
+import Modal from "../Modal/Modal";
+
 import logoNav from "../../assets/images/logo-manto-raiz.png";
 
 class NavBar extends Component {
@@ -90,12 +92,15 @@ class NavBar extends Component {
                   <button
                     type="button"
                     class="nav-link btn btn-success text-white border-3"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
                   >
                     <FontAwesomeIcon icon={faCartPlus} /> Carrinho
                   </button>
                 </div>
               </li>
             </ul>
+            <Modal />
           </div>
         </div>
       </nav>
