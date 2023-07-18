@@ -23,7 +23,7 @@ class TableBody extends Component {
               type="number"
               class="form-control border-3"
               id="numberItens"
-              defaultValue={row.quant_estoque}
+              defaultValue={0}
               min={0}
               max={row.quant_estoque}
             />

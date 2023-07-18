@@ -49,7 +49,7 @@ class CardGrid extends Component {
                     type="number"
                     class="form-control border-3 me-2 w-25"
                     id="numberItens"
-                    defaultValue={1}
+                    defaultValue={0}
                     min={0}
                     max={item.quant_estoque}
                   />
