@@ -1,38 +1,44 @@
-import React, { Component } from "react";
+import React from "react";
+import axios from "axios";
+import useForm from "./hooks/useForm";
 
-import NavBar from "./components/NavBar/NavBar";
-import Produto from "./Pages/Produto/Produto";
-//import Table from "./components/Table/Table";
+export default () => {
+  const [{ values, loading }, handleChange, handleSubmit] = useForm();
+  const [post, setPost] = React.useState(null);
 
-import { characters } from "./utils/dados-table.mock";
-import { DADOS_PRODUTOS } from "./utils/dados-produto.mock";
+  const baseURL = "https://jsonplaceholder.typicode.com/posts";
 
-class App extends Component {
-  state = {
-    characters: characters,
-  };
-
-  removeCharacter = (index) => {
-    const { characters } = this.state;
-    this.setState({
-      characters: characters.filter((character, i) => {
-        return i !== index;
-      }),
+  React.useEffect(() => {
+    axios.get(`${baseURL}/1`).then((response) => {
+      setPost(response.data);
     });
+  }, []);
+
+  const enviarContato = () => {
+    axios.post(baseURL, { ...useForm }).then((response) => {
+      setPost(response.data);
+    });
+    console.log(values);
   };
 
-  render() {
-    return (
-      <div>
-        <NavBar />
-        {/* <Table
-          characterData={this.state.characters}
-          removeCharacter={this.removeCharacter}
-        /> */}
-        <Produto dadosProduto={DADOS_PRODUTOS}/>
-      </div>
-    );
-  }
-}
-
-export default App;
+  return (
+    <div>
+      <h1>Contato</h1>
+      <form onSubmit={handleSubmit(enviarContato)}>
+        <input
+          onChange={handleChange}
+          type="text"
+          name="title"
+          placeholder="Digite o título"
+        />
+        <input
+          onChange={handleChange}
+          type="text"
+          name="body"
+          placeholder="Digite o assunto"
+        />
+        <button type="submit">{loading ? "Enviando..." : "Enviar"}</button>
+      </form>
+    </div>
+  );
+};
