@@ -45,19 +45,15 @@ class CardGrid extends Component {
                 </div>
                 <h3 class="card-title">R$ {item.preco}</h3>
                 <div class="mt-4 d-flex align-items-center">
-                  <input
-                    type="number"
-                    class="form-control border-3 me-2 w-25"
-                    id="numberItens"
-                    defaultValue={0}
-                    min={0}
-                    max={item.quant_estoque}
-                  />
                   <button
                     type="button"
-                    class="btn btn-success text-white border-3 me-2"
+                    class="btn btn-success w-100 text-white border-3 me-2"
                   >
-                    <FontAwesomeIcon icon={faCartPlus} />
+                    <FontAwesomeIcon
+                      icon={faCartPlus}
+                      className="font-awesome-icon"
+                    />
+                    Adicionar ao Carrinho
                   </button>
                   <button
                     type="button"
@@ -67,7 +63,7 @@ class CardGrid extends Component {
                   </button>
                   <button
                     type="button"
-                    class="btn btn-danger text-white border-3 me-2"
+                    class="btn btn-danger text-white border-3"
                   >
                     <FontAwesomeIcon icon={faTrash} />
                   </button>
