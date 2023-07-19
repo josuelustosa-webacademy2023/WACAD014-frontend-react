@@ -21,14 +21,17 @@ class Modal extends Component {
   };
 
   render() {
-    console.log("DADOS", this.state.characters);
+    const { dadosModal } = this.props;
+
     let valorTotal = 0;
 
-    this.state.characters?.forEach((item) => {
+    dadosModal.forEach((item) => {
       const SubTotal = item.preco * item.quant_estoque;
 
       valorTotal += SubTotal;
     });
+
+    console.log("DADOS", dadosModal);
 
     return (
       <div
@@ -45,7 +48,7 @@ class Modal extends Component {
                 className="modal-title fs-5 text-white"
                 id="exampleModalLabel"
               >
-                Meu carrinho ({this.state.characters?.length})
+                Meu carrinho ({dadosModal?.length})
               </h1>
 
               <div className="d-flex align-items-center">
@@ -61,9 +64,9 @@ class Modal extends Component {
               </div>
             </div>
             <div className="modal-body text-white">
-              {this.state.characters?.length ? (
+              {dadosModal?.length ? (
                 <Table
-                  dadosTabela={this.state.characters}
+                  dadosTabela={dadosModal}
                   removeLinha={this.removeLinha}
                 />
               ) : (
@@ -76,7 +79,7 @@ class Modal extends Component {
               <button
                 type="button"
                 className="btn btn-danger"
-                disabled={!this.state.characters?.length}
+                disabled={!dadosModal?.length}
               >
                 <FontAwesomeIcon icon={faTrash} className="font-awesome-icon" />
                 Limpar carrinho
@@ -84,7 +87,7 @@ class Modal extends Component {
               <button
                 type="button"
                 className="btn btn-success"
-                disabled={!this.state.characters?.length}
+                disabled={!dadosModal?.length}
               >
                 <FontAwesomeIcon
                   icon={faCartShopping}

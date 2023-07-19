@@ -10,7 +10,7 @@ import "./style.css"
 
 class CardGrid extends Component {
   render() {
-    const { dadosCard } = this.props;
+    const { dadosCard, adicionarItem} = this.props;
 
     return (
       <div class="row row-cols-1 row-cols-lg-3 g-4 py-4">
@@ -48,6 +48,7 @@ class CardGrid extends Component {
                   <button
                     type="button"
                     class="btn btn-success w-100 text-white border-3 me-2"
+                    onClick={() => adicionarItem(item)}
                   >
                     <FontAwesomeIcon
                       icon={faCartPlus}
