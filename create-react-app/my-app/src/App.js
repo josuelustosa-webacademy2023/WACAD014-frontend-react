@@ -47,7 +47,7 @@ class App extends Component {
         />
         <Produto
           dadosProduto={this.state.produtos}
-          adicionarPoduto={this.adicionarProdutoAoCarrinho}
+          adicionarProduto={this.adicionarProdutoAoCarrinho}
         />
       </div>
     );
