@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { toast } from "react-toastify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
@@ -10,11 +11,14 @@ class Modal extends Component {
     const novaTabela = dadosModal.filter((item, i) => i !== index);
 
     removerItem(novaTabela);
+    toast.error("Produto removido do carrinho");
   };
 
   removerTodosItens = () => {
     const { removerItem } = this.props;
+
     removerItem([]);
+    toast.error("Todos produtos foram removidos do carrinho");
   };
 
   render() {
