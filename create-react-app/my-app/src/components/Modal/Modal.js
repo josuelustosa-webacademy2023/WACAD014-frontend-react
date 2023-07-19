@@ -12,6 +12,11 @@ class Modal extends Component {
     removerItem(novaTabela);
   };
 
+  removerTodosItens = () => {
+    const { removerItem } = this.props;
+    removerItem([]);
+  };
+
   render() {
     const { dadosModal } = this.props;
 
@@ -72,6 +77,7 @@ class Modal extends Component {
                 type="button"
                 className="btn btn-danger"
                 disabled={!dadosModal?.length}
+                onClick={this.removerTodosItens}
               >
                 <FontAwesomeIcon icon={faTrash} className="font-awesome-icon" />
                 Limpar carrinho
