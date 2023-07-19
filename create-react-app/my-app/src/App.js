@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Flip, ToastContainer, toast } from "react-toastify";
 
 import NavBar from "./components/NavBar/NavBar";
 import Produto from "./Pages/Produto/Produto";
@@ -19,15 +20,14 @@ class App extends Component {
     );
 
     if (itemExistente) {
-      alert("Item já adicionado ao carrinho");
-      return;
-    }
+      toast.info("Produto já adicionado ao carrinho");
+    } else {
+      this.setState((stateAnterior) => ({
+        carrinho: [...stateAnterior.carrinho, novoProduto],
+      }));
 
-    this.setState((stateAnterior) => ({
-      carrinho: [...stateAnterior.carrinho, novoProduto],
-    }));
-    alert("Item adicionado ao carrinho");
-    console.log("Produto add ao Carrinho", novoProduto);
+      toast.success("Produto adicionado ao carrinho");
+    }
   };
 
   removerProdutoDoCarrinho = (novoCarrinho) => {
@@ -49,6 +49,7 @@ class App extends Component {
           dadosProduto={this.state.produtos}
           adicionarProduto={this.adicionarProdutoAoCarrinho}
         />
+        <ToastContainer autoClose={2000} transition={Flip} theme={"colored"} />
       </div>
     );
   }
