@@ -4,13 +4,16 @@ import TableBody from "./TableBody";
 
 class Table extends Component {
   render() {
-    const { dadosTabela, removeLinha } = this.props;
+    const { dadosTabela, removerItemDaTabela } = this.props;
 
     return (
       <div className="py-4">
         <table className="container text-center">
           <TableHeader />
-          <TableBody dadosTabela={dadosTabela} removeLinha={removeLinha} />
+          <TableBody
+            dadosTabela={dadosTabela}
+            removerItem={removerItemDaTabela}
+          />
         </table>
       </div>
     );

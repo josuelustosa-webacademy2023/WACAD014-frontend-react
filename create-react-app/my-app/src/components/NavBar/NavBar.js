@@ -15,7 +15,7 @@ import logoNav from "../../assets/images/logo-manto-raiz.png";
 
 class NavBar extends Component {
   render() {
-    const { dadosCarrinho } = this.props;
+    const { dadosCarrinho, removerProduto } = this.props;
 
     return (
       <nav class="navbar navbar-expand-lg bg-dark py-3" data-bs-theme="dark">
@@ -102,7 +102,7 @@ class NavBar extends Component {
                 </div>
               </li>
             </ul>
-            <Modal dadosModal={dadosCarrinho} />
+            <Modal dadosModal={dadosCarrinho} removerItem={removerProduto} />
           </div>
         </div>
       </nav>

@@ -30,12 +30,21 @@ class App extends Component {
     console.log("Produto add ao Carrinho", novoProduto);
   };
 
+  removerProdutoDoCarrinho = (novoCarrinho) => {
+    this.setState({
+      carrinho: novoCarrinho,
+    });
+  };
+
   render() {
     const { carrinho } = this.state;
 
     return (
       <div>
-        <NavBar dadosCarrinho={carrinho} />
+        <NavBar
+          dadosCarrinho={carrinho}
+          removerProduto={this.removerProdutoDoCarrinho}
+        />
         <Produto
           dadosProduto={this.state.produtos}
           adicionarPoduto={this.adicionarProdutoAoCarrinho}

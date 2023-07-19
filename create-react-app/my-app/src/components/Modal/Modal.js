@@ -4,20 +4,12 @@ import { faTrash, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 import Table from "../Table/Table";
 
-import { DADOS_PRODUTOS } from "../../utils/dados-produto.mock";
-
 class Modal extends Component {
-  state = {
-    characters: DADOS_PRODUTOS,
-  };
+  removerItemDaTabela = (index) => {
+    const { dadosModal, removerItem } = this.props;
+    const novaTabela = dadosModal.filter((item, i) => i !== index);
 
-  removeLinha = (index) => {
-    const { characters } = this.state;
-    this.setState({
-      characters: characters.filter((character, i) => {
-        return i !== index;
-      }),
-    });
+    removerItem(novaTabela);
   };
 
   render() {
@@ -67,7 +59,7 @@ class Modal extends Component {
               {dadosModal?.length ? (
                 <Table
                   dadosTabela={dadosModal}
-                  removeLinha={this.removeLinha}
+                  removerItemDaTabela={this.removerItemDaTabela}
                 />
               ) : (
                 <div className="fs-5 text-center text-white">

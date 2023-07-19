@@ -4,7 +4,7 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 class TableBody extends Component {
   render() {
-    const { dadosTabela, removeLinha } = this.props;
+    const { dadosTabela, removerItem } = this.props;
 
     const rows = dadosTabela.map((row, index) => {
       return (
@@ -25,7 +25,7 @@ class TableBody extends Component {
             <button
               type="button"
               class="btn btn-danger text-white border-3"
-              onClick={() => removeLinha(index)}
+              onClick={() => removerItem(index)}
             >
               <FontAwesomeIcon icon={faTrash} /> Remover
             </button>
