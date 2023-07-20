@@ -4,6 +4,10 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+.font-awesome-icon {
+  margin-right: 8px;
+}
+
 .btn-danger,
 .btn-default,
 .btn-info,

@@ -5,7 +5,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 class Produto extends Component {
   render() {
-    const { dadosProduto } = this.props;
+    const { dadosProduto, adicionarProduto } = this.props;
     
     return (
       <div class="container py-5">
@@ -31,7 +31,7 @@ class Produto extends Component {
           </form>
         </div>
 
-        <CardGrid dadosCard={dadosProduto}/>
+        <CardGrid dadosCard={dadosProduto} adicionarItem={adicionarProduto}/>
 
         <div class="container mt-4">
           <nav aria-label="Page navigation example">

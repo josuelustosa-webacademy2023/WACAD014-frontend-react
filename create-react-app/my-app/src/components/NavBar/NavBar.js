@@ -3,26 +3,32 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
   faBoxesStacked,
+  faUserGear,
   faRightToBracket,
   faUserPlus,
+  faCartPlus,
 } from "@fortawesome/free-solid-svg-icons";
+
+import Modal from "../Modal/Modal";
 
 import logoNav from "../../assets/images/logo-manto-raiz.png";
 
 class NavBar extends Component {
   render() {
+    const { dadosCarrinho, removerProduto } = this.props;
+
     return (
       <nav class="navbar navbar-expand-lg bg-dark py-3" data-bs-theme="dark">
         <div class="container">
           <a class="navbar-brand" href="#">
             <img
               src={logoNav}
-              alt="Logo Manto Raíz"
+              alt="Logo Manto Raiz"
               width="100"
               height="100"
               class="d-inline-block align-text"
             />
-            Manto Raíz
+            Manto Raiz
           </a>
           <button
             class="navbar-toggler"
@@ -52,25 +58,51 @@ class NavBar extends Component {
                   Produtos
                 </a>
               </li>
-              <li class="nav-item pe-5">
-                <a class="nav-link" href="#">
-                  <FontAwesomeIcon
-                    icon={faRightToBracket}
-                    style={{ marginRight: 8 }}
-                  />
-                  Login
+              <li class="nav-item dropdown mb-3 pe-lg-5">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <FontAwesomeIcon icon={faUserGear} /> Usuário
                 </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <FontAwesomeIcon
+                        icon={faRightToBracket}
+                        style={{ marginRight: 8 }}
+                      />
+                      Login
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <FontAwesomeIcon
+                        icon={faUserPlus}
+                        style={{ marginRight: 8 }}
+                      />
+                      Signup
+                    </a>
+                  </li>
+                </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <FontAwesomeIcon
-                    icon={faUserPlus}
-                    style={{ marginRight: 8 }}
-                  />
-                  Signup
-                </a>
+                <div class="d-grid w-100">
+                  <button
+                    type="button"
+                    class="nav-link btn btn-success text-white border-3"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    <FontAwesomeIcon icon={faCartPlus} /> Carrinho
+                  </button>
+                </div>
               </li>
             </ul>
+            <Modal dadosModal={dadosCarrinho} removerItem={removerProduto} />
           </div>
         </div>
       </nav>

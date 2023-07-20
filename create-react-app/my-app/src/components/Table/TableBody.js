@@ -1,22 +1,33 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+
 class TableBody extends Component {
   render() {
-    const { characterData, removeCharacter } = this.props;
+    const { dadosTabela, removerItem } = this.props;
 
-    const rows = characterData.map((row, index) => {
+    const rows = dadosTabela.map((row, index) => {
       return (
         <tr key={index}>
-          <td>{row.name}</td>
-          <td>{row.email}</td>
+          <td className="text-start py-3">
+            <img
+              src={row.imagem}
+              alt={row.nome}
+              title={row.nome}
+              width={75}
+              height={65}
+              style={{ borderRadius: 2, marginRight: 12 }}
+            />
+            {row.nome}
+          </td>
+          <td>R$ {row.preco}</td>
           <td>
             <button
               type="button"
               class="btn btn-danger text-white border-3"
-              onClick={() => removeCharacter(index)}
+              onClick={() => removerItem(index)}
             >
-              <FontAwesomeIcon icon={faTrash} /> Delete
+              <FontAwesomeIcon icon={faTrash} /> Remover
             </button>
           </td>
         </tr>

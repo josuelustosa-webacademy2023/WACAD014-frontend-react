@@ -5,8 +5,8 @@ class TableHeader extends Component {
     return (
       <thead>
         <tr>
-          <th>Nome</th>
-          <th>e-mail</th>
+          <th>Manto</th>
+          <th>Subtotal</th>
           <th>Ação</th>
         </tr>
       </thead>
