@@ -17,7 +17,7 @@ const CadastrarProduto = () => {
           </label>
           <input
             type="text"
-            class="form-control form-control-lg border-3"
+            class="form-control form-control border-3"
             id="inputNomeManto"
             defaultValue="Manto "
           />
@@ -28,7 +28,7 @@ const CadastrarProduto = () => {
           </label>
           <input
             type="text"
-            class="form-control form-control-lg border-3"
+            class="form-control form-control border-3"
             id="inputUrl"
             placeholder="https://"
           />
@@ -39,7 +39,7 @@ const CadastrarProduto = () => {
           </label>
           <input
             type="text"
-            class="form-control form-control-lg border-3"
+            class="form-control form-control border-3"
             id="inputNumJogador"
             placeholder="1... ou S/N"
           />
@@ -50,7 +50,7 @@ const CadastrarProduto = () => {
           </label>
           <input
             type="number"
-            class="form-control form-control-lg border-3"
+            class="form-control form-control border-3"
             id="inputCondicao"
             defaultValue={0}
             min={0}
@@ -63,7 +63,7 @@ const CadastrarProduto = () => {
           </label>
           <input
             type="number"
-            class="form-control form-control-lg border-3"
+            class="form-control form-control border-3"
             id="inputQtd"
             defaultValue={1}
             min={1}
@@ -77,7 +77,7 @@ const CadastrarProduto = () => {
           </label>
           <select
             id="inputTamanho"
-            class="form-select form-select-lg border-3"
+            class="form-select form-select border-3"
             defaultValue={1}
           >
             <option value="1">PP</option>
@@ -94,7 +94,7 @@ const CadastrarProduto = () => {
           </label>
           <input
             type="number"
-            class="form-control form-control-lg border-3"
+            class="form-control form-control border-3"
             id="inputPreco"
             defaultValue={0}
             min={0}
@@ -104,7 +104,7 @@ const CadastrarProduto = () => {
         <div class="d-grid w-100">
           <button
             type="submit"
-            class="btn btn-success btn-lg text-white border-3"
+            class="btn btn-success text-white border-3"
           >
             <FontAwesomeIcon
               icon={faFloppyDisk}
@@ -116,7 +116,7 @@ const CadastrarProduto = () => {
         <div class="d-grid w-100">
           <button
             type="reset"
-            class="btn btn-secondary btn-lg text-white border-3"
+            class="btn btn-secondary text-white border-3"
           >
             <FontAwesomeIcon icon={faTrash} className="font-awesome-icon" />
             Limpar dados
