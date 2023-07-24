@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Flip, ToastContainer, toast } from "react-toastify";
 
 import NavBar from "./components/NavBar/NavBar";
@@ -6,15 +6,11 @@ import Produto from "./Pages/Produto/Produto";
 
 import { DADOS_PRODUTOS } from "./utils/dados-produto.mock";
 
-class App extends Component {
-  state = {
-    produtos: DADOS_PRODUTOS,
-    carrinho: [],
-  };
+const App = () => {
+  const [produtos] = useState(DADOS_PRODUTOS);
+  const [carrinho, setCarrinho] = useState([]);
 
-  adicionarProdutoAoCarrinho = (novoProduto) => {
-    const { carrinho } = this.state;
-
+  const adicionarProdutoAoCarrinho = (novoProduto) => {
     const itemExistente = carrinho.find(
       (item) => item.codigo === novoProduto.codigo
     );
@@ -22,37 +18,28 @@ class App extends Component {
     if (itemExistente) {
       toast.info("Produto já adicionado ao carrinho");
     } else {
-      this.setState((stateAnterior) => ({
-        carrinho: [...stateAnterior.carrinho, novoProduto],
-      }));
-
+      setCarrinho((carrinhoAnterior) => [...carrinhoAnterior, novoProduto]);
       toast.success("Produto adicionado ao carrinho");
     }
   };
 
-  removerProdutoDoCarrinho = (novoCarrinho) => {
-    this.setState({
-      carrinho: novoCarrinho,
-    });
+  const removerProdutoDoCarrinho = (novoCarrinho) => {
+    setCarrinho(novoCarrinho);
   };
 
-  render() {
-    const { carrinho } = this.state;
-
-    return (
-      <div>
-        <NavBar
-          dadosCarrinho={carrinho}
-          removerProduto={this.removerProdutoDoCarrinho}
-        />
-        <Produto
-          dadosProduto={this.state.produtos}
-          adicionarProduto={this.adicionarProdutoAoCarrinho}
-        />
-        <ToastContainer autoClose={2000} transition={Flip} theme={"colored"} />
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <NavBar
+        dadosCarrinho={carrinho}
+        removerProduto={removerProdutoDoCarrinho}
+      />
+      <Produto
+        dadosProduto={produtos}
+        adicionarProduto={adicionarProdutoAoCarrinho}
+      />
+      <ToastContainer autoClose={2000} transition={Flip} theme={"colored"} />
+    </div>
+  );
+};
 
 export default App;
