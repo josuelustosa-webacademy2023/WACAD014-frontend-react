@@ -34,6 +34,15 @@ const Routes = () => {
 
   const routes = [
     {
+      path: "/",
+      element: (
+        <Produto
+          dadosProduto={produtos}
+          adicionarProduto={adicionarProdutoAoCarrinho}
+        />
+      ),
+    },
+    {
       path: "/produtos",
       element: (
         <Produto
