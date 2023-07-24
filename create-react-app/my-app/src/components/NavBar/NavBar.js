@@ -1,8 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
   faBoxesStacked,
+  faPlus,
+  faList,
   faUserGear,
   faRightToBracket,
   faUserPlus,
@@ -17,7 +21,7 @@ const NavBar = ({ dadosCarrinho, removerProduto }) => {
   return (
     <nav class="navbar navbar-expand-lg bg-dark py-3" data-bs-theme="dark">
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <Link class="navbar-brand" to="/produtos">
           <img
             src={logoNav}
             alt="Logo Manto Raiz"
@@ -26,7 +30,7 @@ const NavBar = ({ dadosCarrinho, removerProduto }) => {
             class="d-inline-block align-text"
           />
           Manto Raiz
-        </a>
+        </Link>
         <button
           class="navbar-toggler"
           type="button"
@@ -41,48 +45,74 @@ const NavBar = ({ dadosCarrinho, removerProduto }) => {
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item pe-5">
-              <a class="nav-link" href="#">
-                <FontAwesomeIcon icon={faHouse} style={{ marginRight: 8 }} />{" "}
+              <Link class="nav-link" to="/produtos">
+                <FontAwesomeIcon icon={faHouse} className="font-awesome-icon" />{" "}
                 Início
-              </a>
+              </Link>
             </li>
-            <li class="nav-item pe-5">
-              <a class="nav-link active" href="#" aria-current="page">
+            <li class="nav-item dropdown pe-lg-5">
+              <Link
+                class="nav-link dropdown-toggle"
+                to="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 <FontAwesomeIcon
                   icon={faBoxesStacked}
-                  style={{ marginRight: 8 }}
+                  className="font-awesome-icon"
                 />
                 Produtos
-              </a>
+              </Link>
+              <ul class="dropdown-menu">
+                <li>
+                  <Link class="dropdown-item" to="/produtos">
+                    <FontAwesomeIcon
+                      icon={faList}
+                      className="font-awesome-icon"
+                    />
+                    Lista de Produtos
+                  </Link>
+                </li>
+                <li>
+                  <Link class="dropdown-item" to="/produtos/cadastrar-produto">
+                    <FontAwesomeIcon
+                      icon={faPlus}
+                      className="font-awesome-icon"
+                    />
+                    Cadastrar Produto
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li class="nav-item dropdown mb-3 pe-lg-5">
-              <a
+              <Link
                 class="nav-link dropdown-toggle"
-                href="#"
+                to="#"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 <FontAwesomeIcon icon={faUserGear} /> Usuário
-              </a>
+              </Link>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <Link class="dropdown-item" to="#">
                     <FontAwesomeIcon
                       icon={faRightToBracket}
-                      style={{ marginRight: 8 }}
+                      className="font-awesome-icon"
                     />
                     Login
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  <Link class="dropdown-item" to="#">
                     <FontAwesomeIcon
                       icon={faUserPlus}
-                      style={{ marginRight: 8 }}
+                      className="font-awesome-icon"
                     />
                     Signup
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>

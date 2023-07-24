@@ -1,7 +1,5 @@
 import React from "react";
 import CardGrid from "../../components/CardGrid/CardGrid";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const Produto = ({ dadosProduto, adicionarProduto }) => {
   return (
@@ -21,10 +19,6 @@ const Produto = ({ dadosProduto, adicionarProduto }) => {
             <option value="2">18</option>
             <option value="3">36</option>
           </select>
-
-          <button type="button" class="btn btn-success text-white border-3">
-            <FontAwesomeIcon icon={faPlus} />
-          </button>
         </form>
       </div>
 
